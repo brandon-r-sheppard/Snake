@@ -8,14 +8,18 @@ namespace Snake.GameLogic
     public class Player
     {
         private string _name;
-        private string _user_id;
-        private string _connection_id;
-        private Snake _snake;
-        public Snake SnakeInfo
+        private int _userId;
+        private string _connectionId;
+        private Snake _snake = null;
+        public Snake Snake
         {
             get
             {
                 return _snake;
+            }
+            set
+            {
+                _snake = value;
             }
         }
         /// <summary>
@@ -32,11 +36,11 @@ namespace Snake.GameLogic
             }
         }
 
-        public string UserId
+        public int UserId
         {
             get
             {
-                return _user_id;
+                return _userId;
             }
         }
 
@@ -44,7 +48,7 @@ namespace Snake.GameLogic
         {
             get
             {
-                return _connection_id;
+                return _connectionId;
             }
         }
 
@@ -63,9 +67,15 @@ namespace Snake.GameLogic
             }
         }
 
+        public Player(String name, int userId, string connectionId)
+        {
+            _name = name;
+            _userId = userId;
+            _connectionId = connectionId;
+        }
         public override string ToString()
         {
-            return $"Player: {_name} ID: {_user_id} Elo: {_elo} Connection ID: {_connection_id}";
+            return $"Player: {_name} ID: {_userId} Elo: {_elo} Connection ID: {_connectionId}";
         }
     }
 }

@@ -8,22 +8,22 @@ namespace Snake
 {
     public class GameManager
     {
-        private static GameManager instance = null;
-        private static readonly object padlock = new object();
-        private static Random rng = new Random();
+        private static GameManager _instance = null;
+        private static readonly object _padlock = new object();
+        private static Random _rng = new Random();
         public static GameManager GameManagerInstance
         {
             get
             {
                 //Without a lock this singleton is not thread safe
-                lock (padlock)
+                lock (_padlock)
                 {
-                    if (instance == null)
+                    if (_instance == null)
                     {
-                        instance = new GameManager();
+                        _instance = new GameManager();
                     }
                 }
-                return instance;
+                return _instance;
             }
         }
 
@@ -42,7 +42,7 @@ namespace Snake
                 for (int i = 0; i < idLength; i++)
                 {
                     char[] chars = characters.ToCharArray();
-                    output += chars[rng.Next(0, characters.Length)];
+                    output += chars[_rng.Next(0, characters.Length)];
                 }
             }
             while (_games.ContainsKey(output.ToString()));
