@@ -53,9 +53,9 @@ namespace Snake.GameLogic
             }
             if (alive >= 2)
             {
-                return true;
+                return false;
             }
-            return false;
+            return true;
         }
         public override Boolean IsGameOver()
         {
