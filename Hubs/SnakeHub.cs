@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.SignalR;
+using Snake.GameLogic;
+using Snake.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,25 +11,54 @@ namespace Snake.Hubs
     public class SnakeHub : Hub
     {
         private GameManager _gm = GameManager.GameManagerInstance;
-        public async Task createGame()
+        private DatabaseManager _db = DatabaseManager.DatabaseManagerInstance;
+        public async Task JoinGame()
         {
-            string gameId = _gm.generateGameId();
-            await Groups.AddToGroupAsync(Context.ConnectionId, gameId);
-            await Clients.Caller.SendAsync("gameInfo", _gm.generateGame(gameId, Context.ConnectionId));
+        }
+        public async Task CreateGame()
+        {
         }
 
         public async Task joinGame(string gameId)
         {
-            if (_gm.gameIsValid(gameId))
-            {
-                await Groups.AddToGroupAsync(Context.ConnectionId, gameId);
-                await Clients.Caller.SendAsync("joined", "true");
-                await Clients.Group(gameId).SendAsync("playerJoin", "Player has joined the game!");
-            } else
-            {
-                await Clients.Caller.SendAsync("joined", "false");
-            }
+
+        }
+
+        public async Task Reigster(string username, string password, string email)
+        {
+            if(_db.UsernameExists(username) && _db.)
+            _db.Register(username, password, email);
             
-        }   
+        }
+
+        public async Task Login(string username, string password)
+        {
+
+        }
+
+        public async Task VerifyEmail(string emailVerificationCode)
+        {
+
+        }
+
+        public async Task ResetPassword(string email)
+        {
+
+        }
+
+        public async Task PingSnakes()
+        {
+
+        }
+
+        public async Task SnakeDied()
+        {
+
+        }
+
+        public async Task FoodEaten()
+        {
+
+        }
     }
 }

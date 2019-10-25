@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Snake.GameLogic
+namespace Snake.Data
 {
-    public enum GameType
+    public enum Rank
     {
-        STANDARD
+        BOA,
+        VIPER,
+        PYTHON
     }
 }
