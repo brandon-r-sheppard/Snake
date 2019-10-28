@@ -28,6 +28,10 @@ $(document).ready(function(){
         $("#ApplicationContainer").html($("#homePage").clone());
         //Todo: Populate player information div with player from server
     }
+    function findGamePage() {
+        $("#ApplicationContainer").html($("#findGamePage").clone());
+        
+    }
 
     //Calling for the login page to be rendered
     loginPage();
@@ -50,4 +54,6 @@ $(document).ready(function(){
     $(document).on("click", "#loginRegButton", registerPage);
     $(document).on("click", "#forgotPassword", resetPasswordPage);
     $(document).on("click", "#returnLogin", loginPage);
+    $(document).on("click", "#findGameButton", findGamePage);
+
 });

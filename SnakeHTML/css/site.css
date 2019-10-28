@@ -47,7 +47,8 @@ grid-area: bg;
 }
 
 .loginPage, .registerPage,
-.resetPasswordPage, .homePage{
+.resetPasswordPage, .homePage, 
+.findGamePage{
   background-color: #226b80;
   text-align: center;
   width: 40%;
@@ -59,7 +60,8 @@ grid-area: bg;
   font-size: 5em;
 }
 .loginLabel, .registerPage > p,
-.resetPasswordPage > p, .homePage > p{
+.resetPasswordPage > p, .homePage > p,
+ .findGamePage > p{
   font-size: 3em;
 }
 
