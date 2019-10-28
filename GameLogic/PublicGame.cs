@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Snake.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Snake.Data;
+using System.Numerics;
 
 namespace Snake.GameLogic
 {
@@ -12,6 +15,30 @@ namespace Snake.GameLogic
 
         public override void AddPlayer(Player player)
         {
+            Snake newSnake = new Snake();
+            switch (_players.Count)
+            {
+                case 0:
+                    newSnake.pos = new Vector2(10,10);
+
+                    newSnake.direction = 1;
+                    break;
+                case 1:
+                    newSnake.pos = new Vector2(590, 10);
+                    newSnake.direction = -1;
+                    break;
+                case 2:
+                    newSnake.pos = new Vector2(10, 590);
+                    newSnake.direction = 1;
+                    break;
+                case 3:
+                    newSnake.pos = new Vector2(590, 590);
+                    newSnake.direction = -1;
+                    break;
+                default:
+                    Console.WriteLine("Why is there here");
+                    break;
+            }
             _players.Add(player);
         }
 

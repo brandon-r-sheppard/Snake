@@ -8,8 +8,7 @@ namespace Snake.GameLogic
 {
     public class Snake
     {
-        public int x;
-        public int y;
+        public Vector2 pos;
         public int direction; //-2 Up, 2 Down, -1 left, 1 right
         public List<Vector2> tail = new List<Vector2>();
         public bool isAlive;
