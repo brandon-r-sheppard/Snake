@@ -1,0 +1,76 @@
+<!--HTML For Snake Multiplayer game.
+  Brandon Sheppard & Kevin Dimarco-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/site.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/snake.js"></script>
+  <script src="js/site.js"></script>
+  <title>Snake Multiplayer</title>
+</head>
+<body>
+  <!--Container to hold the entire page-->
+  <div class="PageContainer"> 
+    <!--Container to hold the background and background image-->
+    <div class="BackgroundContainer"></div>
+      <!--Container to hold Application-->
+      <div class="ApplicationContainer" id="ApplicationContainer">
+        <!--This is where the application HTML will be inserted-->
+      </div>
+  </div>
+  <!---->
+  <div class="extraPages" hidden>
+    <!--Login Panel-->
+    <div class="loginPage" id="loginPage">
+      <h2 class="loginHeader">Login</h2>
+      <br />
+      <p class="loginLabel">Username</p>
+      <input type="text" class="loginUsername" id="loginUsername" autocomplete="off"><br />
+      <p class="loginLabel">Password</p>
+      <input type="password" class="loginPassword" id="loginPassword" autocomplete="off"><br />
+      <button class="loginButton" id="loginButton">Login</button><br />
+      <button class="loginRegButton" id="loginRegButton">Register</button><br />
+      <button class="forgotPassword" id="forgotPassword">Forgot Password</button><br />
+    </div>
+    <!--Register Panel-->
+    <div class="registerPage" id="registerPage">
+      <h2 class="registerHeader">Register</h2>
+      <br />
+      <p>Username</p>
+      <input type="text" class="registerUsername" autocomplete="off" required><br />
+      <p>Email</p>
+      <input type="email" class="registerEmail" id="registerEmail" autocomplete="off" required><br />
+      <p>Password</p>
+      <input type="password" class="registerPassword" id="registerPassword" autocomplete="off" required></br />
+      <button class="registerButton" id="registerButton">Register</button><br />
+      <button class="returnLogin" id="returnLogin">Back to Login</button><br />
+    </div>
+    <!--Reset Password Panel-->
+    <div class="resetPasswordPage" id="resetPasswordPage">
+      <h2 class="resetHeader">Reset Password</h2>
+      <p>Email</p>
+      <input type="email" class="resetEmail" id="resetEmail"><br />
+      <button class="returnConfirmation" id="resetConfirmation">Reset</button><br />
+      <button class="returnLogin" id="returnLogin">Back to Login</button><br />
+    </div>
+    <!--Home Panel-->
+    <div class="homePage" id="homePage">
+      <div class="plrInfo">
+        <p class="plrName">Player Name</p>
+        <p class="plrRank">Player Rank</p>
+        <p class="plrWins">Player Wins</p>
+        <p class="plrLosses">Player Losses</p>
+      </div>
+      <button class="findGameButton" id="findGameButton">Find Game</button><br />
+      <button class="createGameButton" id="createGameButton">Create Custom Game</button><br />
+      <button class="joinGameButton" id="joinGameButton">Join Custom Game</button><br />
+    </div>
+    <!--Game Panel-->
+  </div>
+</body>
+</html>
