@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Snake.Data;
 using System.Numerics;
 
 namespace Snake.GameLogic
@@ -16,6 +15,7 @@ namespace Snake.GameLogic
         public override void AddPlayer(Player player)
         {
             Snake newSnake = new Snake();
+            Random random = new Random();
             switch (_players.Count)
             {
                 case 0:
