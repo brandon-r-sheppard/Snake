@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Snake.Data;
+
 namespace Snake.GameLogic
 {
     public class CustomGame : Game
     {
         private string _gameId;
         private string _hostId;
-        private Dictionary<Player, Snake> _players = new Dictionary<Player, Snake>();
+        private List<Player> _players = new List<Player>();
         public int Rounds
         {
             get; set;
@@ -18,15 +19,15 @@ namespace Snake.GameLogic
         {
             get; protected set;
         }
-        public CustomGame(string gameId, string hostId, Player host)
+        public CustomGame(string gameId, Player host)
         {
             _gameId = gameId;
-            _hostId = hostId;
-            _players.Add(host, new Snake());
+            _hostId = host.ConnectionId;
+            _players.Add(host);
         }
         public override void AddPlayer(Player player)
         {
-            _players.Add(player, new Snake());
+            _players.Add(player);
         }
         public override void RemovePlayer(Player player)
         {
